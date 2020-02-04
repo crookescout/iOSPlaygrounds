@@ -11,6 +11,10 @@
  >
  > Have to load up the left then right of the truck and keep it as balanced as possible. How many on each side? Melons always go together.
 */
+
+
+//: - experiment: Rewrite the code so that it makes sense without needing a note. Use meaningful names and comments.
+
 let palletOranges = 14
 let palletsWatermelon = 3
 let orangeWeight = 100
@@ -21,12 +25,6 @@ let totalWeight = totalOrangeWeight + totalWatermelonWeight
 let weightOfeachSide = totalWeight / 2
 let palletsOfOrangesPerSide = weightOfeachSide / orangeWeight
 let palletsOfWatermelonPerSide = weightOfeachSide / watermelonWeight
-
-//: - experiment: Rewrite the code so that it makes sense without needing a note. Use meaningful names and comments.
-
-
-
-
 
 
 /*:
