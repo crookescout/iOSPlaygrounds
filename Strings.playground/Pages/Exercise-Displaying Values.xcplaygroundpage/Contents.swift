@@ -14,10 +14,15 @@
  
  _Hint:_ Do all of your calculations in megabytes.
  */
+let iphoneStorge = 8000
 
+let currentStorage = 3000
 
+let videoStorage = 150
 
+let minutesOfVideo = (iphoneStorge - currentStorage) / videoStorage
 
+let minutesLeft = "You can record \(minutesOfVideo) more minutes of video"
 
 
 /*:
