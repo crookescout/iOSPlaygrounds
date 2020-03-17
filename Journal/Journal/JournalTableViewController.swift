@@ -12,10 +12,11 @@ class JournalTableViewController: UITableViewController {
     
     let cellReuseIdentifier = "JournalEntryCell"
     
-    var journal = [Journal]()
+    var journal = Journal()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         for index in 0...1000 {
             journal.entries.append(JournalEntry(date:Date(), contents: "Content for entry \(index)"))
         }
@@ -36,14 +37,14 @@ class JournalTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return journal.entries.count
+        return journal.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalEntryCell", for: indexPath)
-        if let label = cell.textLabel {
-            label.text = "\(journal.entries[indexPath.row])"
+        if let label = cell.textLabel, let entry = journal.entry(index: indexPath.row) {
+            label.text = "\(entry)"
         }
 
         // Configure the cell...
