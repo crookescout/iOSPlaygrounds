@@ -8,10 +8,16 @@
 
 import Foundation
 
-struct JournalEntry {
+struct JournalEntry: CustomStringConvertible {
     
     let date: Date
     let contents: String
     let dateFormatter = DateFormatter()
+    
+    var description: String {
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        return dateFormatter.string(from: date)
+    }
     
 }
