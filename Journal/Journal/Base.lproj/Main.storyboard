@@ -42,14 +42,32 @@
         <!--Journal Entry View Controller-->
         <scene sceneID="mMJ-NS-GDI">
             <objects>
-                <viewController title="Journal Entry View Controller" id="aMo-Kn-tuI" sceneMemberID="viewController">
+                <viewController title="Journal Entry View Controller" id="aMo-Kn-tuI" customClass="JournalEntryViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCb-6L-kNF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="JournalEntry contents" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KPJ-o2-GaS">
+                                <rect key="frame" x="10" y="98" width="394" height="754"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KPJ-o2-GaS" firstAttribute="top" secondItem="Geq-vM-qYu" secondAttribute="top" constant="10" id="KEx-WO-iHx"/>
+                            <constraint firstItem="KPJ-o2-GaS" firstAttribute="leading" secondItem="Geq-vM-qYu" secondAttribute="leading" constant="10" id="Xlm-4B-Dgg"/>
+                            <constraint firstItem="Geq-vM-qYu" firstAttribute="trailing" secondItem="KPJ-o2-GaS" secondAttribute="trailing" constant="10" id="e3x-7s-DwV"/>
+                            <constraint firstItem="Geq-vM-qYu" firstAttribute="bottom" secondItem="KPJ-o2-GaS" secondAttribute="bottom" constant="10" id="p4c-VL-ZwK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Geq-vM-qYu"/>
                     </view>
                     <navigationItem key="navigationItem" id="tve-34-Xky"/>
+                    <connections>
+                        <outlet property="journalEntryContents" destination="KPJ-o2-GaS" id="UMQ-Mm-IpJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSU-Zc-B8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

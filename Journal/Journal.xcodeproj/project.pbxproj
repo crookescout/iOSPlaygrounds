@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E66031A242143F8008A9226 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E660319242143F8008A9226 /* Journal.swift */; };
+		3E66031C2424F93C008A9226 /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66031B2424F93C008A9226 /* JournalEntryViewController.swift */; };
 		51FB4E2324190DFD00C47A59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FB4E2224190DFD00C47A59 /* AppDelegate.swift */; };
 		51FB4E2524190DFD00C47A59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FB4E2424190DFD00C47A59 /* SceneDelegate.swift */; };
 		51FB4E2A24190DFD00C47A59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51FB4E2824190DFD00C47A59 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		3E660319242143F8008A9226 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		3E66031B2424F93C008A9226 /* JournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
 		51FB4E1F24190DFD00C47A59 /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51FB4E2224190DFD00C47A59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51FB4E2424190DFD00C47A59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				51FB4E2424190DFD00C47A59 /* SceneDelegate.swift */,
 				51FB4E2824190DFD00C47A59 /* Main.storyboard */,
 				51FB4E3624190FE500C47A59 /* JournalTableViewController.swift */,
+				3E66031B2424F93C008A9226 /* JournalEntryViewController.swift */,
 				3E660319242143F8008A9226 /* Journal.swift */,
 				51FB4E382419169300C47A59 /* JournalEntry.swift */,
 				51FB4E2B24190DFE00C47A59 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			files = (
 				51FB4E2324190DFD00C47A59 /* AppDelegate.swift in Sources */,
 				3E66031A242143F8008A9226 /* Journal.swift in Sources */,
+				3E66031C2424F93C008A9226 /* JournalEntryViewController.swift in Sources */,
 				51FB4E3724190FE500C47A59 /* JournalTableViewController.swift in Sources */,
 				51FB4E392419169300C47A59 /* JournalEntry.swift in Sources */,
 				51FB4E2524190DFD00C47A59 /* SceneDelegate.swift in Sources */,
