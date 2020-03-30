@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Oq-he-ftA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Oq-he-ftA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="aMo-Kn-tuI" kind="show" id="3eE-J7-xb7"/>
+                                    <segue destination="aMo-Kn-tuI" kind="show" identifier="journalEntry" id="3eE-J7-xb7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -33,7 +33,13 @@
                             <outlet property="delegate" destination="uiB-zb-xuX" id="XZ3-q6-Ook"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Journal" id="PrX-gU-TV7"/>
+                    <navigationItem key="navigationItem" title="My Journal" id="PrX-gU-TV7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="cPY-BA-ega">
+                            <connections>
+                                <segue destination="60e-qN-wF7" kind="presentation" id="KL0-c4-GXs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKT-eF-IXy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,6 +78,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSU-Zc-B8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="687" y="131"/>
+        </scene>
+        <!--New Journal Entry View Controller-->
+        <scene sceneID="tOe-jU-toO">
+            <objects>
+                <viewController title="New Journal Entry View Controller" id="60e-qN-wF7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hv7-4J-pEb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WfT-j1-11f">
+                                <rect key="frame" x="10" y="10" width="394" height="398"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WfT-j1-11f" firstAttribute="leading" secondItem="4BS-PN-CyD" secondAttribute="leading" constant="10" id="GXb-EN-eLl"/>
+                            <constraint firstItem="4BS-PN-CyD" firstAttribute="trailing" secondItem="WfT-j1-11f" secondAttribute="trailing" constant="10" id="K98-WY-skN"/>
+                            <constraint firstItem="4BS-PN-CyD" firstAttribute="bottom" secondItem="WfT-j1-11f" secondAttribute="bottom" constant="400" id="Vw3-se-7PF"/>
+                            <constraint firstItem="WfT-j1-11f" firstAttribute="top" secondItem="4BS-PN-CyD" secondAttribute="top" constant="10" id="wwn-4N-jJf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4BS-PN-CyD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvX-tx-W7Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="183" y="817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yM1-ac-vdd">
