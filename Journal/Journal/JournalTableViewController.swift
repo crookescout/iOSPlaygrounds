@@ -15,6 +15,17 @@ class JournalTableViewController: UITableViewController {
     var journal = Journal()
     
     let journalEntrySegueIdentifier = "journalEntry"
+    
+    @IBAction func done(segue: UIStoryboardSegue) {
+        
+        let newJournalEntry = segue.source as! NewJournalEntryViewController
+        
+        journal.entries.append(JournalEntry(date: Date(), contents: newJournalEntry.journalEntryContents.text))
+        
+        tableView.reloadData()
+    }
+    
+    let newJournalEntrySegueIdentifier = "newJournalEntry"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +113,9 @@ class JournalTableViewController: UITableViewController {
                 let entry = journal.entry(index: indexPath.row) {
                     journalEntryViewController.journalEntry = entry
             }
+        } else if segue.identifier == newJournalEntrySegueIdentifier {
+            if let newJournalEntryViewController = segue.destination as? NewJournalEntryViewController {
+                newJournalEntryViewController.journal = journal
         }
         
         // Get the new view controller using segue.destination.
@@ -109,4 +123,5 @@ class JournalTableViewController: UITableViewController {
     }
 
 
+}
 }

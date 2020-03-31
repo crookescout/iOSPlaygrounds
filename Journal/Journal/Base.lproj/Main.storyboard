@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" title="My Journal" id="PrX-gU-TV7">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="cPY-BA-ega">
                             <connections>
-                                <segue destination="60e-qN-wF7" kind="presentation" id="KL0-c4-GXs"/>
+                                <segue destination="60e-qN-wF7" kind="presentation" identifier="newJournalEntry" id="KL0-c4-GXs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -97,6 +97,11 @@
                                                 <action selector="cancel:" destination="60e-qN-wF7" id="SrZ-bO-h26"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7EH-aa-1Bj">
+                                            <connections>
+                                                <segue destination="MeR-iC-mte" kind="unwind" unwindAction="doneWithSegue:" id="mH4-lF-ZSO"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -118,10 +123,11 @@
                         <viewLayoutGuide key="safeArea" id="4BS-PN-CyD"/>
                     </view>
                     <connections>
-                        <outlet property="cancel" destination="Hor-HE-PeM" id="Sao-jI-j5L"/>
+                        <outlet property="journalEntryContents" destination="WfT-j1-11f" id="8QG-S5-a6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvX-tx-W7Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="MeR-iC-mte" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="182.60869565217394" y="816.96428571428567"/>
         </scene>

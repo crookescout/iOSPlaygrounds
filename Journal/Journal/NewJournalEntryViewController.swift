@@ -10,9 +10,13 @@ import UIKit
 
 class NewJournalEntryViewController: UIViewController {
 
+    @IBOutlet weak var journalEntryContents: UITextView!
+    
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    var journal = Journal?.self
     
     override func viewDidLoad() {
         super.viewDidLoad()
