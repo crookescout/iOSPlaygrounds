@@ -30,7 +30,7 @@ class JournalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for index in 0...1000 {
+        for index in 0...3 {
             journal.entries.append(JournalEntry(date:Date(), contents: "Content for entry \(index)"))
         }
 

@@ -16,7 +16,7 @@ class NewJournalEntryViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    var journal = Journal?.self
+    var journal = Journal()
     
     override func viewDidLoad() {
         super.viewDidLoad()
