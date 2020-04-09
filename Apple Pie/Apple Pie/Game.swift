@@ -24,6 +24,7 @@ struct Game {
         return guessedWord
     }
     
+    
     mutating func playerGuessed(letter: Character) {
         guessedLetters.append(letter)
         if !word.contains(letter) {
