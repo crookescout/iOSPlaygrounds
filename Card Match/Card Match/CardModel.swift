@@ -21,6 +21,9 @@ class CardModel {
             //Get a random number
             let randomNumber = arc4random_uniform(13) + 1
             
+            //Log the number
+            print(randomNumber)
+            
             //Create the first card object
             let cardOne = Card()
             cardOne.imageName = "card\(randomNumber)"
@@ -32,6 +35,8 @@ class CardModel {
             cardTwo.imageName = "card\(randomNumber)"
             
             generatedCardsArray.append(cardTwo)
+            
+            //OPTIONAL: Make it so we only have unique pairs of cards
             
         }
         
