@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Call the getCards method of the card model
-        cardArray = model.getCards()
+        //cardArray = model.getCards()
     }
 
 
