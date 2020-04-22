@@ -54,6 +54,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="9EZ-Wu-Sbx" secondAttribute="trailing" id="yBu-28-QFV"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="backImageView" destination="9EZ-Wu-Sbx" id="5WH-Fc-LoQ"/>
+                                            <outlet property="frontImageView" destination="NZO-Z4-SJe" id="sr6-4s-ybk"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -71,6 +75,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="mpb-LV-dTb" id="SZ1-an-FZk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
