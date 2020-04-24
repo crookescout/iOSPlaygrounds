@@ -18,11 +18,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Call the getCards method of the card model
+        cardArray = model.getCards()
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        // Call the getCards method of the card model
-        cardArray = model.getCards()
     }
 
 
@@ -38,6 +39,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath)
         
         return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
     
