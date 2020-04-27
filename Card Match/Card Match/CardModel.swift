@@ -12,6 +12,7 @@ class CardModel {
     
     func getCards() -> [Card] {
         
+        //https://medium.com/better-programming/building-a-memory-card-game-6513f34dd25c
         //Declare an array to store the generated cards
         var generatedCardsArray = [Card]()
         

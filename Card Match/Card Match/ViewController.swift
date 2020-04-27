@@ -25,7 +25,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.dataSource = self
         
     }
-
+// https://medium.com/better-programming/building-a-memory-card-game-6513f34dd25c
+// https://www.youtube.com/channel/UC2D6eRvCeMtcF5OGHf1-trw
 
     // MARK: UICollectionView Protocol Methods
     
@@ -45,6 +46,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
-    
-}
+     
+} // End ViewController class
 
