@@ -8,7 +8,7 @@
 
 import Foundation
 
-// https://medium.com/better-programming/building-a-memory-card-game-6513f34dd25c
+//https://medium.com/better-programming/building-a-memory-card-game-6513f34dd25c
 
 class Card {
     
