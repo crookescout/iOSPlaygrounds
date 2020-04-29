@@ -63,10 +63,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             // Flip the card
             cell.flip()
             
+            // Set the status of the card
+            card.isFlipped = true
+            
         }
         else {
             // Flip the card back
             cell.flipBack()
+            
+            // Set the status of the card
+            card.isFlipped = false
+
         }
         
         
