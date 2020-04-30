@@ -14,6 +14,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var model =  CardModel()
     var cardArray = [Card]()
+    
+    var firstFlippedCardIndex:IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +60,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Get the card that the user selected
         let card = cardArray[indexPath.row]
         
+        // If card is not flipped over
         if card.isFlipped == false {
             
             // Flip the card
@@ -66,18 +69,39 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             // Set the status of the card
             card.isFlipped = true
             
-        }
-        else {
-            // Flip the card back
-            cell.flipBack()
-            
-            // Set the status of the card
-            card.isFlipped = false
-
+            // Determine if it is the first card or second card that is flipped over
+            if firstFlippedCardIndex == nil {
+                
+                // This is the first card being flipped
+                firstFlippedCardIndex = indexPath
+            }
+            else {
+                
+                // This is the second card being flipped
+                
+                // TODO: Perform the matching logic
+            }
         }
         
+    } // End of the didSelectItemAt method
+    
+    // MARK: - Game Logic Methods
+    
+    func checkFormatches(_ secondFlippedCardIndex:IndexPath) {
+        
+        // Get the cells for the two cards that were revealed
+        let cardOneCell = collectionView.cellForItem(at: firstFlippedCardIndex!) as? CardCollectionViewCell
+        
+        let cardTwoCell = collectionView.cellForItem(at: secondFlippedCardIndex) as? CardCollectionViewCell
+        
+        // Get the cards for the two cards that were reavealed
+        let cardOne = cardArray[firstFlippedCardIndex!.row]
+        let cardTwo = cardArray[secondFlippedCardIndex.row]
+        
+        // Compare the two cards
         
     }
+    
      
 } // End ViewController class
 
