@@ -99,6 +99,32 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cardTwo = cardArray[secondFlippedCardIndex.row]
         
         // Compare the two cards
+        if cardOne.imageName == cardTwo.imageName {
+            
+            // It's a match
+            
+            // Set the statuses of the cards
+            cardOne.isMatched = true
+            cardTwo.isMatched = true
+            
+            // Remove the cards from the grid
+            cardOneCell?.remove()
+            cardTwoCell?.remove()
+            
+        }
+        else {
+            
+            // It's not a match
+            
+            // Set the statuses of the cards
+            
+            // Flip both cards back
+            
+        }
+        
+        // Reset the firstFlippedCardIndex back to nil so that the proceess can be repeated and the user can flip two cards over again to be compared
+        
+        firstFlippedCardIndex = nil
         
     }
     
