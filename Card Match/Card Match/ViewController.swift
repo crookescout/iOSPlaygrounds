@@ -61,7 +61,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let card = cardArray[indexPath.row]
         
         // If card is not flipped over
-        if card.isFlipped == false {
+        if card.isFlipped == false && card.isMatched == false {
             
             // Flip the card
             cell.flip()
@@ -79,7 +79,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
                 // This is the second card being flipped
                 
-                // TODO: Perform the matching logic
+                // Perform the matching logic
+                checkForMatches(indexPath)
+                
             }
         }
         
@@ -87,7 +89,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // MARK: - Game Logic Methods
     
-    func checkFormatches(_ secondFlippedCardIndex:IndexPath) {
+    func checkForMatches(_ secondFlippedCardIndex:IndexPath) {
         
         // Get the cells for the two cards that were revealed
         let cardOneCell = collectionView.cellForItem(at: firstFlippedCardIndex!) as? CardCollectionViewCell
@@ -117,8 +119,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             // It's not a match
             
             // Set the statuses of the cards
+            cardOne.isFlipped = false
+            cardTwo.isFlipped = false
             
             // Flip both cards back
+            cardOneCell?.flipBack()
+            cardTwoCell?.flipBack()
             
         }
         
