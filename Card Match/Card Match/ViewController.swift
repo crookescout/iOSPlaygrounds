@@ -10,12 +10,16 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var timerLabel: UILabel!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var model =  CardModel()
     var cardArray = [Card]()
     
     var firstFlippedCardIndex:IndexPath?
+    
+    var timer:Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,8 +132,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
         }
         
-        // Reset the firstFlippedCardIndex back to nil so that the proceess can be repeated and the user can flip two cards over again to be compared
+        // Tell the collectionView to reload the cell of the first card if it is nil
+        if cardOneCell == nil {
+            collectionView.reloadItems(at: [firstFlippedCardIndex!])
+        }
         
+        //Reset the property that tracks the first card flipped  
+        // Reset the firstFlippedCardIndex back to nil so that the proceess can be repeated and the user can flip two cards over again to be compared
         firstFlippedCardIndex = nil
         
     }
