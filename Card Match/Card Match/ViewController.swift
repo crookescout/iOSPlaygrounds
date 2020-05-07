@@ -20,6 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var firstFlippedCardIndex:IndexPath?
     
     var timer:Timer?
+    var milliseconds:Float = 10 * 1000 // 10 seconds
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +31,35 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        // Create timer
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
     }
 // https://medium.com/better-programming/building-a-memory-card-game-6513f34dd25c
 // https://www.youtube.com/channel/UC2D6eRvCeMtcF5OGHf1-trw
+    
+    // MARK: - Timer Methods
+    
+    @objc func timerElapsed() {
+        
+        milliseconds -= 1
+        
+        // Convert to seconds
+        let seconds = String(format: "%.2f", milliseconds/1000)
+        
+        // Set label
+        timerLabel.text = "Time Remaining: \(seconds)"
+        
+        // When the timer reaches 0...
+        if milliseconds <= 0 {
+            timer?.invalidate()
+            timerLabel.textColor = UIColor.purple
+            
+            // Check if there are any cards unmatched
+            checkGameEnded()
+        }
+        
+    }
 
     // MARK: UICollectionView Protocol Methods
     
@@ -117,6 +144,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             cardOneCell?.remove()
             cardTwoCell?.remove()
             
+            // Check if there are any cards left unmatched
+            checkGameEnded()
+            
         }
         else {
             
@@ -143,6 +173,49 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
+    func checkGameEnded() {
+        
+        // Determine if there are any cards unmatched
+        var isWon = true
+        
+        for card in cardArray {
+            
+            if card.isMatched == false {
+                isWon = false
+                break
+            }
+        }
+        
+        // Message variables
+        var title = ""
+        var message = ""
+        
+        // If not, then user has won, stop the timer
+        if isWon == true {
+            
+            if milliseconds > 0 {
+                timer?.invalidate()
+            }
+            
+            title = "Congradulations!"
+            message = "You've Won!"
+            
+        }
+        else {
+            // If there are unmatched cards, check if there is any time left
+            
+            if milliseconds > 0 {
+                return
+            }
+            
+            title = "Game Over"
+            message = "You've Lost"
+
+        }
+        
+        // Show won or lost message
+        
+    }
      
 } // End ViewController class
 
