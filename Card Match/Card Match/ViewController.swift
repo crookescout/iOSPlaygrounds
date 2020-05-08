@@ -85,6 +85,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        // Check is there is any time left
+        if milliseconds <= 0 {
+            return
+        }
+        
         // Get the cell that the suer selected
         let cell = collectionView.cellForItem(at: indexPath) as! CardCollectionViewCell
         
@@ -214,7 +219,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         // Show won or lost message
+        showAlert(title, message)
         
+    }
+    
+    func showAlert(_ title: String, _ message:String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(alertAction)
+        
+        present(alert, animated: true, completion: nil)
     }
      
 } // End ViewController class
