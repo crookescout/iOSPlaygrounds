@@ -20,7 +20,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var firstFlippedCardIndex:IndexPath?
     
     var timer:Timer?
-    var milliseconds:Float = 10 * 1000 // 10 seconds
+    var milliseconds:Float = 30 * 1000 // 30 seconds
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        SoundManager.playSound(.shuffle)
+        
+    }
+    
 // https://medium.com/better-programming/building-a-memory-card-game-6513f34dd25c
 // https://www.youtube.com/channel/UC2D6eRvCeMtcF5OGHf1-trw
     
@@ -102,6 +110,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             // Flip the card
             cell.flip()
             
+            // Play the flip sound
+            SoundManager.playSound(.flip)
+            
             // Set the status of the card
             card.isFlipped = true
             
@@ -141,6 +152,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             // It's a match
             
+            // Play sound
+            SoundManager.playSound(.match)
+            
             // Set the statuses of the cards
             cardOne.isMatched = true
             cardTwo.isMatched = true
@@ -156,6 +170,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         else {
             
             // It's not a match
+            
+            // Play sound
+            SoundManager.playSound(.nomatch)
             
             // Set the statuses of the cards
             cardOne.isFlipped = false
