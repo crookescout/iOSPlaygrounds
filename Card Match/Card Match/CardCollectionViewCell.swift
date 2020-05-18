@@ -4,7 +4,8 @@
 //
 //  Created by Scout Crooke on 4/21/20.
 //  Copyright © 2020 Scout Crooke. All rights reserved.
-//
+
+// This file contains functions that see if the card is matched, flips cards back and forth, and removes cards if they are matched
 
 import UIKit
 

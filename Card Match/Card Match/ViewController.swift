@@ -4,7 +4,7 @@
 //
 //  Created by Scout Crooke on 4/15/20.
 //  Copyright © 2020 Scout Crooke. All rights reserved.
-//
+// This file designs what the app looks, contains information such as a timer, and shows logic of how the app game works, etc.
 
 import UIKit
 

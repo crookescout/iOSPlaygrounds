@@ -4,7 +4,8 @@
 //
 //  Created by Scout Crooke on 4/16/20.
 //  Copyright © 2020 Scout Crooke. All rights reserved.
-//
+
+//This file stores information about the cards
 
 import Foundation
 

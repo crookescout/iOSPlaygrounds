@@ -4,7 +4,8 @@
 //
 //  Created by Scout Crooke on 5/11/20.
 //  Copyright © 2020 Scout Crooke. All rights reserved.
-//
+
+// This file contains information about the sounds played when the app runs and a function that plays the sounds
 
 import Foundation
 import AVFoundation
