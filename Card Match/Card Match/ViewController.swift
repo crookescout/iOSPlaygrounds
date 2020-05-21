@@ -20,7 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var firstFlippedCardIndex:IndexPath?
     
     var timer:Timer?
-    var milliseconds:Float = 50 * 1000 // 50 seconds
+    var milliseconds:Float = 45 * 1000 // 45 seconds
     
 
     override func viewDidLoad() {
